@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boredom Dice 🎲</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #333;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background: #ff6b6b;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    button:hover {
+      background: #ff4757;
+      transform: scale(1.05);
+    }
+
+    #output {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      max-width: 600px;
+      color: #444;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Boredom Dice 🎲</h1>
+  <button onclick="getPrompt()">I’m bored</button>
+  <p id="output">Click the button to roll the dice!</p>
+
+  <script>
+    const prompts = [
+      // Funny
+      "Pretend you’re a news reporter and announce what you’re doing.",
+      "Walk across the room like you’re sneaking in a spy movie.",
+      "Invent a new dance move and give it a silly name.",
+      "Talk in a fake accent for the next 2 minutes.",
+      "Act like a superhero and strike your best pose.",
+      
+      // Creative
+      "Draw a doodle with your eyes closed.",
+      "Write a 2-line poem about the object closest to you.",
+      "Invent a superhero power based on your favorite food.",
+      "Describe the sky without using the words ‘blue’ or ‘cloud.’",
+      "Write a startup idea based on your last snack.",
+
+      // Productive but fun
+      "Clean one small thing around you for 2 minutes.",
+      "Organize a messy drawer or desk space.",
+      "Delete 5 files from your computer you don’t need.",
+      "Write down one goal you want to achieve this week.",
+      "Do 10 stretches right where you are.",
+
+      // Random genius
+      "Come up with a new emoji using just text characters.",
+      "Pitch a new invention in 30 seconds.",
+      "Imagine a new sport and explain its rules.",
+      "Think of a movie title about your day so far.",
+      "Explain how you’d survive a zombie apocalypse in one sentence.",
+
+      // Chill / Fun
+      "Search ‘random fact’ online and share what you find.",
+      "Play your favorite song and dance for 1 minute.",
+      "Sit quietly and count how many different sounds you can hear.",
+      "Close your eyes and try to list 10 objects in the room.",
+      "Send a funny meme to a friend right now.",
+
+      // Extra randomness
+      "Pretend your water bottle is a famous celebrity and interview it.",
+      "Make up a conspiracy theory about your chair.",
+      "Describe yourself as if you were a product on Amazon.",
+      "Try balancing something unusual on your head.",
+      "Clap your hands 20 times as fast as you can."
+    ];
+
+    function getPrompt() {
+      const randomIndex = Math.floor(Math.random() * prompts.length);
+      document.getElementById("output").innerText = prompts[randomIndex];
+    }
+  </script>
+</body>
+</html>
